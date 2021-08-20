@@ -31,7 +31,7 @@ const mainBannerPress=(item)=>{
 
 
     return (
-        <div className="bg-white-200 m-20">
+        <div className="bg-white-200 m-20 ml-60">
             <h1 className="text-2xl font-semibold pl-5">Dashboard</h1>
             {/* <button className="btn text-red-500 lg:text-5xl">Click me</button> */}
             <div className='flex'>
