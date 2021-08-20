@@ -11,6 +11,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Sidebar() {
     return (
+
         <div className="absolute top-0 shadow-md w-55 text-center rounded-xl flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
             <h1 className="text-2xl font-bold">Medical App</h1>
 
@@ -47,7 +48,6 @@ function Sidebar() {
                     <ExpandMoreIcon/>
                 </div>
             </div>
-
 
 
            
