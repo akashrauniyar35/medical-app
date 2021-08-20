@@ -9,7 +9,9 @@ function Sidebar() {
             <Link href="/dashboard">
             <div className="animate-spin"> <DashboardIcon fontSize="large"/></div>
             </Link>
+            <Link href="/Patients">
             <div> <DashboardIcon fontSize="large"/></div>
+            </Link>
             <div> <LocalHospitalIcon fontSize="large"/></div>
             <div> <DashboardIcon fontSize="large"/></div>
            
