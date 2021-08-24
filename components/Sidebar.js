@@ -21,6 +21,7 @@ function Sidebar() {
     }
 
     return (
+
         <div className="absolute top-0 flex">
         <div className="bg-gray-50 border-r-2 shadow-md w-[6rem] text-center rounded-xl flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
             <h1 className="text-xl font-bold">Medical App</h1>
@@ -42,6 +43,17 @@ function Sidebar() {
                 </div>} */}
                 <Sidenav Icon={LocalHospitalIcon} title="Overview" link="/overview" />
                 <Sidenav Icon={ReceiptIcon} title="Medical" link="/medicalrecords" />               <Sidenav Icon={EmailIcon} title="Messages" link="/" />
+
+        <div className="absolute top-0 shadow-md w-55 text-center rounded-xl flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
+            <h1 className="text-2xl font-bold">Medical App</h1>
+
+            <div className="my-5 w-[160px] flex flex-col gap-3 text-left flex-1">
+           
+            <Sidenav Icon={DashboardIcon} title="Dashboard" link="/dashboard"/>
+            <Sidenav Icon={EventAvailableIcon} title="My Schedules" link="/myschedules"/>
+            <Sidenav Icon={LocalHospitalIcon} title="Overview" link="/overview"/>
+            <Sidenav Icon={ReceiptIcon} title="Medical Records" link="/medicalrecords"/>
+            <Sidenav Icon={EmailIcon} title="Messages" link="/"/>
             </div>
 
             <div className="flex flex-col gap-4 mb-3">
@@ -78,11 +90,6 @@ function Sidebar() {
                         </div>} */}
             </div>
 
-
-
-
-        </div>
-        <DashboardMenu/>
         </div>
     )
 }
