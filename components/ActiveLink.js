@@ -21,7 +21,7 @@ const ActiveLink = ({href, children}) => {
             // color: isCurrentPath ? "blue" : "black",
             
         }}
-        className={`"font-bold text-gray-900 flex flex-col" ${isCurrentPath ? "bg-blue-400 rounded-sm text-white " : "bg-white"}`}>    
+        className={`"font-bold text-gray-900 flex flex-col" ${isCurrentPath ? "text-blue-500 rounded-sm font-bold text-white " : "bg-white"}`}>    
             {children}
         </a>  
     
