@@ -8,17 +8,100 @@ import EmailIcon from '@material-ui/icons/Email';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import NotificationsActiveRoundedIcon from '@material-ui/icons/NotificationsActiveRounded';
 import DashboardMenu from '../components/submenu/dashboardMenu'
+
+const dashboardData = [
+    {
+        id:"01",
+        title: "Sprint",
+        link:"/dashboard",
+        icon:"CalendarViewDayIcon"
+    },
+    {
+        id:"02",
+        title: "Reports",
+        link:"/dashboard",
+        icon:"BarChartIcon"
+    },
+    {
+        id:"03",
+        title: "Releases",
+        link:"/dashboard",
+        icon:"NewReleasesIcon"
+    },
+    {
+        id:"04",
+        title: "Tracker",
+        link:"/dashboard",
+        icon:"TimelineIcon"
+    },
+    {
+        id:"05",
+        title: "System Settings",
+        link:"/dashboard",
+        icon:"SettingsIcon"
+    },
+    
+
+]
+
+const scheduleData = [
+    {
+        id:"01",
+        title: "My appointment",
+        link:"/dashboard",
+        icon:"CalendarViewDayIcon"
+    },
+    {
+        id:"02",
+        title: "Rosters",
+        link:"/dashboard",
+        icon:"BarChartIcon"
+    },
+    {
+        id:"03",
+        title: "Timetable",
+        link:"/dashboard",
+        icon:"NewReleasesIcon"
+    },
+    {
+        id:"04",
+        title: "Genuine",
+        link:"/dashboard",
+        icon:"TimelineIcon"
+    },
+    {
+        id:"05",
+        title: "System Settings",
+        link:"/dashboard",
+        icon:"SettingsIcon"
+    },
+    
+
+]
+
 
 function Sidebar() {
     const [click, setClick] = useState(false)
     const [profile, setProfile] = useState(false)
 
-    const handleClick = () => {
-        setClick(!click)
+    const [selected, setSelected] = useState(null)
+
+    console.log(selected)
+    
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        setSelected('lksdjf')
+        console.log(selected)
+
     }
+
+
+    
+    
 
     return (
         <div className="absolute top-0 flex">
@@ -27,9 +110,9 @@ function Sidebar() {
 
             <div className="my-5 w-[160px] flex flex-col text-left flex-1">
 
-                <Sidenav Icon={DashboardRoundedIcon} title="Dashboard" link="/dashboard" />
-                <div className="">
-                    <Sidenav Icon={EventAvailableIcon} title="Schedules" link="/myschedules" />
+                <Sidenav onClick={handleChange} Icon={DashboardRoundedIcon} title="Dashboard" link="/dashboard" />
+                <div onClick={()=> setSelected('schedules')} className="">
+                    <Sidenav  Icon={EventAvailableIcon} title="Schedules" link="/schedules" />
                     {/* <p onClick={handleClick}><ExpandMoreIcon/></p> */}
                 </div>
                 {/* {click && <div className="ml-10 mt-[-0.3rem]">
@@ -40,7 +123,7 @@ function Sidebar() {
 
                     </ul>
                 </div>} */}
-                <Sidenav Icon={LocalHospitalIcon} title="Overview" link="/overview" />
+                <Sidenav onClick={() => setSelected('overview')} Icon={LocalHospitalIcon} title="Overview" link="/overview" />
                 <Sidenav Icon={ReceiptIcon} title="Medical" link="/medicalrecords" />               <Sidenav Icon={EmailIcon} title="Messages" link="/" />
             </div>
 
@@ -82,7 +165,34 @@ function Sidebar() {
 
 
         </div>
-        <DashboardMenu/>
+
+        <div>
+        
+      {/* {selected === null &&
+      <div>
+            {dashboardData.map((item) => {
+            return (
+                <DashboardMenu key={item.id} title={item.title} link={item.link} Icon={item.icon}/>
+
+            )
+        })}
+
+        </div> 
+      }
+              {selected === 'schedules' && 
+              <div>
+              {scheduleData.map((item) => {
+              return (
+                  <DashboardMenu key={item.id} title={item.title} link={item.link} Icon={item.icon}/>
+  
+              )
+          })}
+  
+  
+          </div>} */}
+          </div>
+
+
         </div>
     )
 }
