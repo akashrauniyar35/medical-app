@@ -1,10 +1,26 @@
+import React, {useState} from 'react';
 import { MainBanner } from '../components'
+import MenuHolder from '../components/submenu/menuHolder'
 
-function dashboard() {
+import {TabMenu} from '../components/TabMenu';
 
-const mainBannerPress=(item)=>{
-    console.log('print')
-}
+import CalendarViewDayIcon from '@material-ui/icons/CalendarViewDay';
+import BarChartIcon from '@material-ui/icons/BarChart';
+import SettingsIcon from '@material-ui/icons/Settings';
+import NewReleasesIcon from '@material-ui/icons/NewReleases';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import Sprint from './../components/rightScreen/sprint'
+import Reports from './../components/rightScreen/reports'
+import Releases from './../components/rightScreen/releases'
+
+
+function dashboard({query}) {
+
+    const [selected, setSelected] = useState('Sprint')
+    const mainBannerPress = (item) => {
+        console.log('print')
+    }
+
 
     const DATA = [
         {
@@ -29,24 +45,69 @@ const mainBannerPress=(item)=>{
         },
     ]
 
+    
+    
+    const dashboardData = [
+        {
+            id: "01",
+            title: "sprint",
+            link: "/dashboard",
+            icon: <CalendarViewDayIcon/>,
+            comp:<Sprint/>
+        },
+        {
+            id: "02",
+            title: "Reports",
+            link: "/dashboard",
+            icon: <BarChartIcon/>,
+            comp:<Reports/>
+        },
+        {
+            id: "03",
+            title: "Releases",
+            link: "/dashboard",
+            icon: <NewReleasesIcon/>,
+            comp:<Releases/>
+
+        },
+        {
+            id: "04",
+            title: "Tracker",
+            link: "/dashboard",
+            icon: <TimelineIcon/>
+        },
+        {
+            id: "05",
+            title: "System Settings",
+            link: "/dashboard",
+            icon: <SettingsIcon/>
+        },
+    
+    
+    ]
+
+    
 
     return (
-        <div className="bg-white-200 m-20 ml-60">
-            <h1 className="text-2xl font-semibold pl-5">Dashboard</h1>
-            {/* <button className="btn text-red-500 lg:text-5xl">Click me</button> */}
-            <div className='flex'>
-                {DATA.map((item) => {
-                    return (
+        <div className="bg-white-200 ml-[6rem] flex">
+          <TabMenu initialTab={query}>
+              
+              {dashboardData.map((item) => (
+                            <MenuHolder comp={item.comp} label={item.title} title={item.title} link={item.link} Icon={item.icon} />
+                            ))
+              }
+              
+               </TabMenu>
 
-                        <div className='bg-red-300'>
-                            <MainBanner id={item.id} name={item.name} count={item.count} />
-                        </div>
-                    )
-                })}
-            </div>
+            
+            
 
         </div>
     )
 }
 
 export default dashboard
+
+dashboard.getInitialProps = ({query}) => {
+    return {query}
+}

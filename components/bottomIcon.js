@@ -20,7 +20,7 @@ function bottomIcon({Icon, title, link}) {
                <div className={`${isCurrentPath && "ring-2 ring-blue-500 "} h-10 w-10 rounded-lg bg-gray-200 flex items-center justify-center`}>
             <Icon className="h-4" color={isCurrentPath ? "primary" : "action"}/>
             </div>
-            <h2 className={`text-[0.8rem] font-semibold ${isCurrentPath ? "text-blue-500 font-semibold" : "text-gray-500"}`}>
+            <h2 className={`text-[0.8rem] font-light ${isCurrentPath ? "text-blue-500 font-bold" : "text-gray-500"}`}>
                 {title}</h2>
         </div>
         </a>
