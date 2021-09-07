@@ -89,7 +89,7 @@ function dashboard({query}) {
     
 
     return (
-        <div className="bg-white-200 ml-[6rem] flex">
+        <div className="bg-white-200 ml-[6rem] flex mt-20">
           <TabMenu initialTab={query}>
               
               {dashboardData.map((item) => (
@@ -98,6 +98,8 @@ function dashboard({query}) {
               }
               
                </TabMenu>
+
+               
 
             
             
