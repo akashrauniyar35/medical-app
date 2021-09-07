@@ -59,7 +59,7 @@ function schedule({query}) {
 
 
     return (
-        <div className="bg-white-200 ml-[6rem] flex">
+        <div className="bg-white-200 ml-[6rem] flex mt-14">
              <TabMenu initialTab={query}>
               
               {scheduleData.map((item) => (
