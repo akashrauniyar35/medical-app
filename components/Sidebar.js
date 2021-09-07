@@ -105,13 +105,8 @@ function Sidebar() {
 
 
     return (
-   <div className="absolute top-14 mt-5 flex">
+        <div className="absolute top-14 mt-5 flex">
             <div className="bg-gray-50 border-r-2 shadow-md w-[6rem] text-center rounded-xl flex flex-col items-center gap-4 p-2 h-full cursor-pointer">
-
-
-        <div className="absolute top-0 flex">
-            <div className="bg-gray-50 border-r-2 shadow-md w-[6rem] text-center rounded-xl flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
-
                 <h1 className="text-xl font-bold">Medical App</h1>
 
                 <div className="my-5 w-[160px] flex flex-col text-left flex-1">
@@ -126,29 +121,11 @@ function Sidebar() {
                         <li> My Appointments </li>
                         <li> Shift Roster </li>
                         <li> Timeline </li>
-
                     </ul>
                 </div>} */}
-
                     <Sidenav onClick={() => setSelected('overview')} Icon={LocalHospitalIcon} title="Overview" link="/overview" />
                     <Sidenav Icon={ReceiptIcon} title="Medical" link="/medicalrecords" />               <Sidenav Icon={EmailIcon} title="Messages" link="/" />
                 </div>
-
-                <Sidenav Icon={LocalHospitalIcon} title="Overview" link="/overview" />
-                <Sidenav Icon={ReceiptIcon} title="Medical" link="/medicalrecords" />               <Sidenav Icon={EmailIcon} title="Messages" link="/" />
-
-        <div className="absolute top-0 shadow-md w-55 text-center rounded-xl flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
-            <h1 className="text-2xl font-bold">Medical App</h1>
-
-            <div className="my-5 w-[160px] flex flex-col gap-3 text-left flex-1">
-           
-            <Sidenav Icon={DashboardIcon} title="Dashboard" link="/dashboard"/>
-            <Sidenav Icon={EventAvailableIcon} title="My Schedules" link="/myschedules"/>
-            <Sidenav Icon={LocalHospitalIcon} title="Overview" link="/overview"/>
-            <Sidenav Icon={ReceiptIcon} title="Medical Records" link="/medicalrecords"/>
-            <Sidenav Icon={EmailIcon} title="Messages" link="/"/>
-            </div>
-
 
                 <div className="flex flex-col gap-4 mb-3">
                     <div className="flex flex-col gap-3 border-b-2 pb-5">
@@ -193,7 +170,6 @@ function Sidebar() {
 
             </div>
 
-
             <div>
 
                 {/* {selected === null &&
@@ -201,10 +177,8 @@ function Sidebar() {
             {dashboardData.map((item) => {
             return (
                 <DashboardMenu key={item.id} title={item.title} link={item.link} Icon={item.icon}/>
-
             )
         })}
-
         </div> 
       }
               {selected === 'schedules' && 
