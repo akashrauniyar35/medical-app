@@ -1,12 +1,18 @@
 import '../styles/globals.css'
 import Sidebar from '../components/Sidebar'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
+
+import Login from '../components/Authentication/Login';
 
 
 function MyApp({ Component, pageProps }) {
-  return <><Component {...pageProps} />
-  <Navbar/>
-  <Sidebar/></>
+  return <>
+    <Login />
+    {/* <Component {...pageProps} />
+    <Navbar />
+    <Sidebar /> */}
+
+  </>
 
 }
 
