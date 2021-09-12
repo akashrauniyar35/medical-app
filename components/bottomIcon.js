@@ -14,13 +14,13 @@ function bottomIcon({Icon, title, link}) {
 
 
     return (
-        <a onClick={handleClick}>
+        <a className="w-[7.5rem] hover:bg-blue-100" onClick={handleClick}>
         <div 
-            className="flex gap-1 flex-col p-3 items-center w-full text-sm">
-               <div className={`${isCurrentPath && "ring-2 ring-blue-500 "} h-10 w-10 rounded-lg bg-gray-200 flex items-center justify-center`}>
+            className={`flex flex-col p-3 items-center hover:text-blue-500 ml-11 w-1/2 pl-8 h-[4rem] text-sm ${isCurrentPath && 'border-l-2 border-blue-600'}`}>
+               <div className={`${isCurrentPath && ""} h-10 w-10 flex items-center justify-center`}>
             <Icon className="h-4" color={isCurrentPath ? "primary" : "action"}/>
             </div>
-            <h2 className={`text-[0.8rem] font-light ${isCurrentPath ? "text-blue-500 font-bold" : "text-gray-500"}`}>
+            <h2 className={`text-[0.7rem] font-light ${isCurrentPath ? "text-blue-500 font-bold" : "text-gray-500"}`}>
                 {title}</h2>
         </div>
         </a>

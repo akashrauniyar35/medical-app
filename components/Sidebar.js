@@ -105,16 +105,16 @@ function Sidebar() {
 
 
     return (
-        <div className="absolute top-14 mt-5 flex">
-            <div className="bg-gray-50 border-r-2 shadow-md w-[6rem] text-center rounded-xl flex flex-col items-center gap-4 p-2 h-full cursor-pointer">
-                <h1 className="text-xl font-bold">Medical App</h1>
+        <div className="absolute top-14 mt-2 flex">
+            <div className="sticky top-0 bg-blue-50 border-r-2 shadow-md w-[5.5rem] text-center flex flex-col items-center gap-4 p-2 h-screen cursor-pointer">
+                {/* <h1 className="text-xl font-bold">Medical App</h1> */}
 
                 <div className="my-5 w-[160px] flex flex-col text-left flex-1">
 
                     <Sidenav onClick={handleChange} Icon={DashboardRoundedIcon} title="Dashboard" link="/dashboard" />
-                    <div onClick={() => setSelected('schedules')} className="">
+                    <div onClick={() => setSelected('schedules')} className="flex">
                         <Sidenav Icon={EventAvailableIcon} title="Schedules" link="/schedules" />
-                        {/* <p onClick={handleClick}><ExpandMoreIcon/></p> */}
+                   
                     </div>
                     {/* {click && <div className="ml-10 mt-[-0.3rem]">
                     <ul className="text-[13px] flex flex-col gap-2 font-semibold">
@@ -135,14 +135,14 @@ function Sidebar() {
                             <NotificationsIcon />
                             <div className="absolute bg-red-500 text-gray-100 w-[14px] rounded-full text-center top-0 right-3 text-[9px]">7</div>
 
-                            <p>Notifications</p>
+                            <p className="text-[0.7rem]">Notifications</p>
                             </div>
                             {notification && <Notifications open={notification} setNotification={setNotification}/>}
                         </div>
 
                         <div className="ml-2 gap-3 text-[12px] text-gray-500 font-semibold">
                             <HelpOutlineIcon />
-                            <p>Help ?</p>
+                            <p className="text-[0.7rem]">Help ?</p>
                         </div>
                     </div>
                     {/* <div className="flex gap-2 mt-5">

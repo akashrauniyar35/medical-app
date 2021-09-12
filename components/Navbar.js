@@ -2,14 +2,54 @@ import AppsIcon from '@material-ui/icons/Apps';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Image from 'next/image'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ProfileMenu from '../components/Navbar/profileMenu'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import AvailableStatus from '../components/Navbar/availableStatus'
+import { CheckCircleIcon, XCircleIcon, MinusCircleIcon, ClockIcon } from '@heroicons/react/solid'
+
 
 
 
 function Navbar() {
     const [profileClicked, setProfileClicked] = useState(false)
+
+    const [availibility, setAvailibility] = useState('Available')
+
+    const renderIcons = () => {
+        switch (availibility) {
+            case 'Available' : 
+            return <CheckCircleIcon className="w-4 h-4 text-green-400 ring-1 rounded-full ring-green-600 bg-white"/>
+
+            case 'Busy' : 
+            return <p className="bg-red-700 w-3 h-3 rounded-full ring-1 ring-red-900 mt-1"></p>
+
+            case 'Do not disturb' : 
+            return <MinusCircleIcon className="w-4 h-4 text-red-700 ring-1 rounded-full ring-red-900 bg-white"/>
+
+            case 'Be right back' : 
+            return <ClockIcon className="w-4 h-4 text-yellow-500 ring-1 rounded-full ring-yellow-600 bg-white"/>
+
+            case 'Appear Away' : 
+            return <ClockIcon className="w-4 h-4 text-yellow-500 ring-1 rounded-full ring-yellow-600 bg-white"/>
+
+            case 'Offline' : 
+            return <XCircleIcon className="w-4 h-4 text-gray-500 ring-1 rounded-full ring-gray-800 bg-white"/>
+            
+            default: 
+            return null;
+            
+            <p>Menuka Khadka</p>
+        }
+        
+       
+    }
+    
+    useEffect(() =>{ 
+       
+    }, [availibility])
+    
+
+
     return (
         <div className="absolute top-0 z-10 w-full h-[4rem] bg-blue-500 flex justify-between items-center">
             <div className="h-full w-[4rem] text-gray-200 text-center flex align-center items-center pl-3 cursor-pointer hover:bg-blue-400">
@@ -29,14 +69,17 @@ function Navbar() {
                     onClick={() => setProfileClicked(!profileClicked)}>
                     <p>JP</p>
                     <div className="absolute flex h-4 top-6 left-6 text-green-400 bg-white rounded-full ring-2 ring-gray-700">
-                        <CheckCircleIcon fontSize="inherit" />
+                        {/* <CheckCircleIcon fontSize="inherit" /> */}
+                        <div className="">
+                    {renderIcons()} </div>
+
                     </div>
                     
                   
                 </div>
                 {profileClicked && 
                         <div className="absolute w-full h-full top-14 right-72">
-                        <ProfileMenu/>
+                        <ProfileMenu availibility = {availibility} setAvailibility = {setAvailibility} renderIcons = {renderIcons()}/>
                         </div>
                         }
                 </div>
